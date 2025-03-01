@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <h2>Liste des Contacts</h2>
+  
+    <!-- Bouton Ajouter -->
+    <button class="btn btn-primary mb-3" (click)="ajouterContact()">
+      <i class="bi bi-person-plus-fill"></i> Ajouter
+    </button>
+  
+    <!-- Tableau des contacts -->
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ contact.nom }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.telephone }}</td>
+          <td>
+            <!-- Bouton Consulter -->
+            <button class="btn btn-info btn-sm me-1" (click)="consulterContact(contact)">
+              <i class="bi bi-eye"></i>
+            </button>
+            <!-- Bouton Modifier -->
+            <button class="btn btn-warning btn-sm me-1" (click)="modifierContact(contact)">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <!-- Bouton Supprimer -->
+            <button class="btn btn-danger btn-sm" (click)="supprimerContact(contact)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

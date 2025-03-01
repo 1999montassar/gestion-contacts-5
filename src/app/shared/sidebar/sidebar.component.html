@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <ul>
+    <li><a routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
+
+
+    <li [class.open]="isMessagesOpen">
+      <a (click)="toggleMessages()">Messages</a>
+      <ul>
+        <li><a routerLink="/messages/sent" routerLinkActive="active">Sent Messages</a></li>
+        <li><a routerLink="/messages/received" routerLinkActive="active">Received Messages</a></li>
+        <li><a routerLink="/messages/favorites" routerLinkActive="active">Favorites</a></li>
+      </ul>
+    </li>
+
+    <li><a routerLink="/trash" routerLinkActive="active">Corbeille</a></li>
+   
+  </ul>
+</div>
